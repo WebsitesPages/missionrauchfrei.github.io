@@ -24,3 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("load", playVideoOnLoad);
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const heroVideo = document.getElementById("heroVideo");
+
+    function playVideoOnInteraction() {
+        heroVideo.play();
+        document.removeEventListener("scroll", playVideoOnInteraction);
+        document.removeEventListener("touchstart", playVideoOnInteraction);
+    }
+
+    document.addEventListener("scroll", playVideoOnInteraction);
+    document.addEventListener("touchstart", playVideoOnInteraction);
+});
