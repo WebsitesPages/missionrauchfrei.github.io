@@ -15,3 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const heroVideo = document.getElementById("heroVideo");
+
+    function playVideoOnLoad() {
+        heroVideo.play();
+    }
+
+    window.addEventListener("load", playVideoOnLoad);
+});
