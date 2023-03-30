@@ -45,4 +45,12 @@ if (window.pageYOffset > 50) {
 
 })
 
+const hero_content = document.querySelector(".hero-content")
+if (halfwayCounted = 1){
+    hero_content.style.opacity = "1";
+    hero_content.style.transition = "2.5s";
+}
+  
+
+
 });
