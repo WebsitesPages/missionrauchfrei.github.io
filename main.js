@@ -62,86 +62,44 @@ document.addEventListener('DOMContentLoaded', function() {
         halfwayCounted = halfwayCounted.toFixed(1);
         console.log(halfwayCounted);
 
-        const b1 = document.querySelector(".b1");
-        const b2 = document.querySelector(".b2");
-        const b3 = document.querySelector(".b3");
-        const b4 = document.querySelector(".b4");
-        const b5 = document.querySelector(".b5");
-        const b6 = document.querySelector(".b6");
-        const b7 = document.querySelector(".b7");
-        const b8 = document.querySelector(".b8");
-        const b9 = document.querySelector(".b9");
-        const b10 = document.querySelector(".b10");
-        const b11 = document.querySelector(".b11");
-        const b12 = document.querySelector(".b12");
-        const b13 = document.querySelector(".b13");
+  const h3Elements = document.querySelectorAll(".banner_content_h3");
+  let delay = 0;
 
-        if(halfwayCounted <= -1.2){
-            b1.style.opacity = "1";
-            b1.style.transition = "1s";
+  h3Elements.forEach((h3) => {
+    h3.classList.add("hidden");
+    setTimeout(() => {
+      h3.classList.remove("hidden");
+      h3.style.transition = "opacity 1s";
+      h3.style.opacity = 1;
+    }, delay);
+    delay += 1000; // Zeit in Millisekunden, hier 1000 ms = 1 Sekunde
+  });
 
-            b2.style.opacity = "1";
-            b2.style.transition = "1.5s";
+  const banner2 = document.querySelector(".banner2");
 
-            b3.style.opacity = "1";
-            b3.style.transition = "2s";
+    const observerOptions = {
+        root: null,
+        rootMargin: "50px",
+        threshold: 0.8
+        
+    };
 
-            b4.style.opacity = "1";
-            b4.style.transition = "2.5s";
+    const handleIntersection = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                document.body.style.backgroundColor = "white";
+                banner2.style.backgroundColor = "white";
+            } else {
+                // Ändern Sie die Farbe zurück, wenn der Bildschirm nicht mehr auf der Klasse 'banner2' ist
+                document.body.style.backgroundColor = ""; // Setzen Sie hier Ihre ursprüngliche Hintergrundfarbe ein
+                banner2.style.backgroundColor = "black";
+            }
+        });
+    };
 
-            b5.style.opacity = "1";
-            b5.style.transition = "3s";
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    observer.observe(banner2);
 
-            b5.style.opacity = "1";
-            b5.style.transition = "3.5s";
-
-            b6.style.opacity = "1";
-            b6.style.transition = "4s";
-
-            b7.style.opacity = "1";
-            b7.style.transition = "4.5s";
-            b8.style.opacity = "1";
-            b8.style.transition = "5s";
-            b9.style.opacity = "1";
-            b9.style.transition = "5.5s";
-            b10.style.opacity = "1";
-            b10.style.transition = "6s";
-            b11.style.opacity = "1";
-            b11.style.transition = "6.5s";
-            b12.style.opacity = "1";
-            b12.style.transition = "7s";
-            b13.style.opacity = "1";
-            b13.style.transition = "7.5s";
-        } else {
-            b1.style.opacity = "0";
-            b2.style.opacity = "0";
-            b3.style.opacity = "0";
-            b4.style.opacity = "0";
-            b5.style.opacity = "0";
-            b6.style.opacity = "0";
-            b7.style.opacity = "0";
-            b8.style.opacity = "0";
-            b9.style.opacity = "0";
-            b10.style.opacity = "0";
-            b11.style.opacity = "0";
-            b12.style.opacity = "0";
-            b13.style.opacity = "0";
-
-            b1.style.transition = "1s";
-            b2.style.transition = "1s";
-            b3.style.transition = "1s";
-            b4.style.transition = "1s";
-            b5.style.transition = "1s";
-            b6.style.transition = "1s";
-            b7.style.transition = "1s";
-            b8.style.transition = "1s";
-            b9.style.transition = "1s";
-            b10.style.transition = "1s";
-            b11.style.transition = "1s";
-            b12.style.transition = "1s";
-            b13.style.transition = "1s";
-
-        }
 
         if (window.pageYOffset > 50) {
             header.style.top = "0"; // Zeigt den Header an, wenn man nach unten scrollt

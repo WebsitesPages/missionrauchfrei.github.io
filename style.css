@@ -1,12 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: black;
+    
+    transition: background-color .5s;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -81,6 +83,16 @@ nav ul li a {
     z-index: 1;
     color: white; /* Optional: Fügen Sie eine Textfarbe hinzu, die gut zum Video passt */
 }
+.hero-content h1{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+.hero-content p{
+    padding: 0 2rem;
+}
+
+
 .material-symbols-outlined {
     font-variation-settings:
       'FILL' 0,
@@ -138,8 +150,8 @@ nav ul li a {
     padding: 0 2rem 6vh 2rem;
 }
 .banner_content_h3{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
     color: white;
     padding: 0 2rem 0 2rem;
 }
@@ -162,12 +174,12 @@ nav ul li a {
     border-radius: 5px;
 }
 
-footer {
+/* footer {
     background-color: #eeeeeeb9;
     padding: 1rem;
     text-align: center;
     color: white;
-}
+} */
 
 @media screen and (max-width: 768px) {
     #heroVideo {
@@ -189,15 +201,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    background-color: black;
 }
-.b13{
-    padding-bottom: 3rem;
-}
+
 .banner-content {
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
+    padding-top: 15vh;
 }
 
 .banner h2 {
@@ -212,6 +224,10 @@ footer {
     line-height: 1.5;
     color: white;
 }
+.hidden {
+    opacity: 0;
+  }
+  
 
 @media screen and (max-width: 768px) {
     .banner h2 {
@@ -223,4 +239,36 @@ footer {
     }
 }
 
+.banner2 {
+    min-height: 100vh;
+    padding: 2rem 0;
+    display: flex;
+    padding-bottom: 3rem;
+    background-color: black;
+    transition: background-color .5s;
+}
+.banner2-content{
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 10vh;
+}
 
+.banner2_content_h2{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    padding: 0 2rem 6vh 2rem;
+}
+.banner2_content_h3{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: black;
+    padding: 0 2rem 0 2rem;
+    line-height: 2.5;
+}
+.banner2_content_p{
+    padding: 0 2rem 0 2rem;
+}
+.last-p-container {
+    margin-bottom: 3rem;
+}
