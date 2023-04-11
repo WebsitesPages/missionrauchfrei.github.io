@@ -75,31 +75,35 @@ document.addEventListener('DOMContentLoaded', function() {
     delay += 1000; // Zeit in Millisekunden, hier 1000 ms = 1 Sekunde
   });
 
-  const banner2 = document.querySelector(".banner2");
+   const banner2 = document.querySelector(".banner2");
 
-    const observerOptions = {
-        root: null,
-        rootMargin: "50px",
-        threshold: 0.8
+//   const observerOptions = {
+//       root: null,
+//       rootMargin: "50px",
+//       threshold: 0.8,
+//   };
+
+//   const handleIntersection = (entries, observer) => {
+//       entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+              
+//               banner2.style.backgroundColor = "white";
+//           } else {
+//               // Ändern Sie die Farbe zurück, wenn der Bildschirm nicht mehr auf der Klasse 'banner2' ist
         
-    };
+//               banner2.style.backgroundColor = "black";
+//           }
+//       });
+//   };
 
-    const handleIntersection = (entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                document.body.style.backgroundColor = "white";
-                banner2.style.backgroundColor = "white";
-            } else {
-                // Ändern Sie die Farbe zurück, wenn der Bildschirm nicht mehr auf der Klasse 'banner2' ist
-                document.body.style.backgroundColor = ""; // Setzen Sie hier Ihre ursprüngliche Hintergrundfarbe ein
-                banner2.style.backgroundColor = "black";
-            }
-        });
-    };
+//   const observer = new IntersectionObserver(handleIntersection, observerOptions);
+//   observer.observe(banner2);
 
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-    observer.observe(banner2);
-
+    // if (halfwayCounted <=-5){
+    //     banner2.style.backgroundColor = "white";
+    // } else {
+    //     banner2.style.backgroundColor = "black";
+    // }
 
         if (window.pageYOffset > 50) {
             header.style.top = "0"; // Zeigt den Header an, wenn man nach unten scrollt
@@ -117,6 +121,34 @@ document.addEventListener('DOMContentLoaded', function() {
             arrow_text.style.opacity = "1";
         }
     });
+
+
+
+const nav = document.querySelector(".banner2");  //wohin soll die Klasse "active" hinzugefügt werden
+const sectionOne = document.querySelector(".banner");  //welche Sektion soll weg sein, damit es ausgeführt wird
+
+const sectionOneOptions = {
+  root: null,
+  rootMargin: "-150px",
+  treshold: 0.1
+};
+
+const sectionOneObserver = new IntersectionObserver(function(
+entries,
+sectionOneObserver
+) {
+entries.forEach(entry => {
+  if (entry.isIntersecting) {
+    nav.classList.remove("backgroundblack");
+  } else {
+    nav.classList.add("backgroundblack");     //Von Zeile 45-53 sagt nur, dass wenn du auf der Sektion drauf bist (sectionOneOptions macht Viewport nur kleiner), dann füge hinzu, wenn nicht dann entferne
+  }
+  
+});
+},
+sectionOneOptions);
+
+sectionOneObserver.observe(sectionOne);
 });
 
   
