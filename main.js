@@ -124,8 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-const nav = document.querySelector(".banner2");  //wohin soll die Klasse "active" hinzugefügt werden
-const sectionOne = document.querySelector(".banner");  //welche Sektion soll weg sein, damit es ausgeführt wird
+const nav = document.querySelector(".banner2");
+const sectionOne = document.querySelector(".banner");
+const banner2items = document.querySelectorAll(".banner2-item");
 
 const sectionOneOptions = {
   root: null,
@@ -134,21 +135,27 @@ const sectionOneOptions = {
 };
 
 const sectionOneObserver = new IntersectionObserver(function(
-entries,
-sectionOneObserver
+  entries,
+  sectionOneObserver
 ) {
-entries.forEach(entry => {
-  if (entry.isIntersecting) {
-    nav.classList.remove("backgroundblack");
-  } else {
-    nav.classList.add("backgroundblack");     //Von Zeile 45-53 sagt nur, dass wenn du auf der Sektion drauf bist (sectionOneOptions macht Viewport nur kleiner), dann füge hinzu, wenn nicht dann entferne
-  }
-  
-});
-},
-sectionOneOptions);
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      nav.classList.remove("backgroundblack");
+      banner2items.forEach(item => {
+        item.classList.remove("opacitynull");
+      });
+    } else {
+      nav.classList.add("backgroundblack");
+      banner2items.forEach(item => {
+        item.classList.add("opacitynull");
+      });
+    }
+  });
+}, sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
+
+
 });
 
   
