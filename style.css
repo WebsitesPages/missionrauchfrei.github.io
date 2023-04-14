@@ -332,8 +332,11 @@ nav ul li a {
         flex-direction: column;
         align-items: center;
     }
-    .banner2-item-img,
-    .banner2-item-text {
+    .banner2-item-img
+     {
+        width: 90%;
+    }
+    .banner2-item-text{
         width: 100%;
     }
 }
