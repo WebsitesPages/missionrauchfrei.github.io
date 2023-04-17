@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const nav = document.querySelector(".banner2");
 const sectionOne = document.querySelector(".banner");
 const banner2items = document.querySelectorAll(".banner2-item");
+const curve = document.querySelector(".curve");
 
 const sectionOneOptions = {
   root: null,
@@ -141,11 +142,13 @@ const sectionOneObserver = new IntersectionObserver(function(
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       nav.classList.remove("backgroundblack");
+      curve.classList.remove("opacitynull");
       banner2items.forEach(item => {
         item.classList.remove("opacitynull");
       });
     } else {
       nav.classList.add("backgroundblack");
+      curve.classList.add("opacitynull")
       banner2items.forEach(item => {
         item.classList.add("opacitynull");
       });
