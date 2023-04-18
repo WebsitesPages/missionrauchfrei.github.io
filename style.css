@@ -309,6 +309,15 @@ nav ul li a {
 }
 .banner2_content_p{
     padding: 0 2rem 0 2rem;
+    text-decoration: none;
+}
+.banner2_content_a{
+    padding: 0 2rem 0 2rem;
+    text-decoration: none;
+    color: rgb(206, 145, 41);
+}
+.banner2_content_a:hover{
+    text-decoration: underline;
 }
 
 /* Media Query für kleine Bildschirme */
@@ -327,8 +336,24 @@ nav ul li a {
     .banner2-item-text{
         width: 100%;
     }
+    .banner2_content_a{
+        padding: 0 2rem 0 2rem;
+    }
+}
+.download-button {
+    display: inline-block;
+    background-color: rgb(206, 145, 41);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 2rem;
 }
 
+.download-button:hover {
+    background-color: rgb(180, 120, 30);
+}
 .opacitynull{
     opacity: 1;
 }
