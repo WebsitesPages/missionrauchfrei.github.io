@@ -84,10 +84,13 @@ nav ul li a {
 .hero-content h1{
     text-transform: uppercase;
     font-size: 1.5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .hero-content p{
     padding: 0 2rem;
+    text-shadow: 2px 2px 4px rgb(221, 221, 221, 0.5);
+    font-family: 'Merriweather', serif;
+    
 }
 
 
@@ -312,9 +315,10 @@ nav ul li a {
     text-decoration: none;
 }
 .banner2_content_a{
-    padding: 0 2rem 0 2rem;
+    /* padding: 0 2rem 0 2rem; */
     text-decoration: none;
     color: rgb(206, 145, 41);
+    font-style: italic;
 }
 .banner2_content_a:hover{
     text-decoration: underline;
@@ -336,9 +340,7 @@ nav ul li a {
     .banner2-item-text{
         width: 100%;
     }
-    .banner2_content_a{
-        padding: 0 2rem 0 2rem;
-    }
+    
 }
 .download-button {
     display: inline-block;
