@@ -296,6 +296,7 @@ nav ul li a {
 .banner2_content_h2 {
     opacity: 1;
     transition: opacity 1s ease-in;
+    margin-bottom: 4vh;
 }
 
 .banner2_content_h2.show {
