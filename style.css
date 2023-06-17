@@ -415,3 +415,20 @@ nav ul li a {
 .opacitynull{
     opacity: 1;
 }
+.download-button2 {
+    display: inline-block;
+    background-color: #d68d97;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.download-button2:hover {
+    background-color: #cc707d;
+}
